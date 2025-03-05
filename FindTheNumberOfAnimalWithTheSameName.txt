@@ -1,0 +1,11 @@
+-- 코드를 입력하세요
+SELECT NAME,
+       cnt_name "COUNT"
+from(
+    SELECT NAME,
+       count(NAME) cnt_name
+    From ANIMAL_INS
+    where NAME is Not NULL
+    group by NAME
+)a
+where cnt_name >=2
